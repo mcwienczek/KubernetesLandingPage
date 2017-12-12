@@ -3,13 +3,8 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
-
 const app = express();
-const router = express.Router();
 
-
-app.use("/", router);
-app.use(bodyParser.json());
 app.use(express.static('public'));
 
 function sendMail(email) {
@@ -46,16 +41,13 @@ function sendMail(email) {
     });
 }
 
-// app.use(serve(__dirname + '/public'));
-
-router.post('/registration', (req, res) => { 
-    console.log(req.body);    
-    res.send('Hello World!');
+app.use(bodyParser.json());
+app.post('/registration', (req, res) => { 
+    console.log(req.body);
+    res.send(req.body || "");
     // sendMail(res.data.email); 
 }); 
 
-
-
 app.listen(3000, function () {
-    console.log('server is running at ');
+    console.log('server is running');
 });
