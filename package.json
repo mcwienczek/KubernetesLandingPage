@@ -1,0 +1,14 @@
+{
+  "name": "langingpage",
+  "version": "1.0.0",
+  "description": "Landing Page for Kubernetes Online Courses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Agnieszka Bugla",
+  "license": "ISC",
+  "dependencies": {
+    "jQuery": "^1.7.4"
+  }
+}
