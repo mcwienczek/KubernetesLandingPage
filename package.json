@@ -1,5 +1,5 @@
 {
-  "name": "langingpage",
+  "name": "landingpage",
   "version": "1.0.0",
   "description": "Landing Page for Kubernetes Online Courses",
   "main": "index.js",
@@ -9,6 +9,9 @@
   "author": "Agnieszka Bugla",
   "license": "ISC",
   "dependencies": {
-    "jQuery": "^1.7.4"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-static": "^1.2.5",
+    "nodemailer": "^4.4.1"
   }
 }
