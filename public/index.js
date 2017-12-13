@@ -10,7 +10,7 @@ $(document).ready(function(){
             url: "/registration",
             // The key needs to match your method's input parameter (case-sensitive).
             data: JSON.stringify(dataToSend),
-            contentType: "application/json; charset=utf-8",
+            contentType: "application/json",
             dataType: "json",
             success: function(data) {
                 console.log(data);
