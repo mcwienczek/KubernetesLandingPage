@@ -42,6 +42,7 @@ function sendMail(email) {
 }
 
 app.use(bodyParser.json());
+
 app.post('/registration', (req, res) => { 
     console.log(req.body);
     res.send(req.body || "");
