@@ -129,7 +129,85 @@ html {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 10%; }
+  height: 10%;
+  background-color: rgba(40, 40, 40, 0.4) !important; }
+
+#cwienczekCom {
+  color: #fffdf9;
+  font-family: 'Montserrat', sans-serif; }
+
+#cwienczekCom:hover {
+  color: #6dd4ff; }
+
+#twitter {
+  color: #fffdf9;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  vertical-align: text-bottom;
+  margin-left: -15px;
+  padding-left: 15px; }
+
+#twitter:hover {
+  color: #13aff0; }
+
+#twitter-border {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 2px;
+  border: 1px solid #fffdf9;
+  margin-right: 5px;
+  margin-left: -20px; }
+
+#twitter-border:hover {
+  border: 1px solid #13aff0; }
+
+#linkedin {
+  color: #fffdf9;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  vertical-align: text-bottom;
+  margin-left: -15px;
+  padding-left: 15px; }
+
+#linkedin:hover {
+  color: #3399CC; }
+
+#linkedin-border {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 2px;
+  border: 1px solid #fffdf9;
+  margin-right: 5px; }
+
+#linkedin-border:hover {
+  border: 1px solid #3399CC; }
+
+#github {
+  color: #fffdf9;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  vertical-align: text-bottom;
+  margin-left: -15px;
+  padding-left: 15px; }
+
+#github:hover {
+  color: #60b044; }
+
+#github-border {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 2px;
+  border: 1px solid #fffdf9;
+  padding-right: 5px; }
+
+#github-border:hover {
+  border: 1px solid #60b044; }
 
 #text {
   position: absolute;
@@ -138,6 +216,15 @@ html {
   top: 20%;
   width: 70%;
   height: 50%; }
+
+#coming-soon {
+  font-family: 'Montserrat', sans-serif;
+  color: #fffdf9;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 0.5px 0.5px 0.5px #3d4147;
+  padding-top: -20px;
+  min-height: 60px; }
 
 #h1-font {
   font-family: 'Montserrat', sans-serif;
