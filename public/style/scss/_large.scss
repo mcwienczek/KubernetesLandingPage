@@ -1,8 +1,59 @@
 @media only screen and (min-width: 1140px) {
     
-    #h1-font {
-        font-size: 53px; 
-        } 
-    
-        
+    @mixin social-icons($size) {
+        width: $size; 
+        height: $size;
+        line-height: $size; 
     }
+    
+    #twitter {
+        @include social-icons(58px);
+        margin-left: -15px;     
+    }
+
+    #twitter-border {
+        @include social-icons(58px);       
+        margin-left: -15px; 
+    }
+
+    #linkedin {
+        @include social-icons(58px);
+        margin-left: -15px;   
+    }
+
+    #linkedin-border {
+        @include social-icons(58px);
+   
+    }    
+    
+    #github {
+        @include social-icons(58px);
+        margin-left: -15px; 
+    }
+
+    #github-border {
+        @include social-icons(58px);        
+    }
+
+    #h1-font {
+        font-size: 3.8rem; 
+    }
+
+    #coming-soon {
+        font-size: 1.9rem; 
+        letter-spacing: 6px; 
+    }
+
+    div h5 {
+        font-size: 1.7rem;
+        font-weight: 350; 
+    }
+    
+    .check-container {
+        font-size: 1.5rem; 
+    }
+
+    .checkmark {
+        top: 9px; 
+    }
+}

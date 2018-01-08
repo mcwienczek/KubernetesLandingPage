@@ -1,3 +1,5 @@
+@import "colors"; 
+
 // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
 html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
@@ -15,7 +17,6 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     height: 100%;
 	margin:0;
     padding:0;
-    /* background-image: url(./style/photo-1437419764061-2473afe69fc2.jpg);  */
 }
 
 #layer {
@@ -25,165 +26,231 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 	top:0;
 	width:100%;
 	height:100%;
-	background-color: rgba(255,255,255,0.3);
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0.3), rgba(99,99,99,0.8)); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(top, rgba(255,255,255,0.3), rgba(99,99,99,0.8)); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(top, rgba(255,255,255,0.3), rgba(99,99,99,0.8)); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(99,99,99,0.8)); /* Standard syntax (must be last) */
+	background-color: $layer;
+	background: -webkit-linear-gradient(top, $layer, $layer1); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(top, $layer, $layer1); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(top, $layer, $layer1); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom, $layer, $layer1); /* Standard syntax (must be last) */
 }
 
+
+/* NAVBAR */
 #navbar {
     z-index: 3; 
     position: absolute;
     top: 0; 
     width: 100%; 
-    height: 10%; 
-    background-color: rgba(40,40,40,0.4) !important; 
+    height: 8%; 
+    background-color: $navbar !important; 
     }
 
 #cwienczekCom {
-    color: #fffdf9; 
-    font-family: 'Montserrat', sans-serif;  
+    color: $cream-white; 
+    margin-left: -10px; 
+    font: {
+        family: 'Montserrat', sans-serif;
+        size: 17px; 
+    }
+    &:hover {
+        color: $cwienczek-hover;        
+    }
 }
 
-#cwienczekCom:hover {
-    color: #6dd4ff; 
-    
+@mixin social-icons($size) {
+    width: $size; 
+    height: $size;
+    line-height: $size; 
+}
+
+@mixin social-icons-border {
+    border-radius: 2px; 
+    border: 1px solid $cream-white; 
 }
 
 #twitter {
-    color: #fffdf9; 
-    width: 55px; 
-    height: 55px;
-    line-height: 55px;  
+    @include social-icons(35px);
+    color: $cream-white;   
     vertical-align: text-bottom; 
-    margin-left: -15px;
+    margin-left: -25px;
     padding-left: 15px; 
-}
-
-#twitter:hover {
-    color: #13aff0; 
+    &:hover {
+        color: $twitter-hover;        
+    }
 }
 
 #twitter-border {
-    width: 55px; 
-    height: 55px;
-    line-height: 55px; 
-    border-radius: 2px; 
-    border: 1px solid #fffdf9; 
+    @include social-icons(35px);
+    @include social-icons-border; 
     margin-right: 5px;  
     margin-left: -20px; 
-}
-
-#twitter-border:hover {
-    border: 1px solid #13aff0; 
+    &:hover {
+        border: 1px solid $twitter-hover;        
+    }
 }
 
 #linkedin {
-    color: #fffdf9; 
-    width: 55px; 
-    height: 55px;
-    line-height: 55px;  
+    color: $cream-white; 
+    @include social-icons(35px); 
     vertical-align: text-bottom; 
-    margin-left: -15px;
-    padding-left: 15px;     
-}
-
-#linkedin:hover {
-    color: #3399CC; 
+    margin-left: -25px;
+    padding-left: 15px;    
+    &:hover {
+        color: $linkedin-hover;        
+    } 
 }
 
 #linkedin-border {
-    width: 55px; 
-    height: 55px;
-    line-height: 55px; 
-    border-radius: 2px; 
-    border: 1px solid #fffdf9; 
+    @include social-icons(35px); 
+    @include social-icons-border; 
     margin-right: 5px;   
-}
-
-#linkedin-border:hover {
-    border: 1px solid #3399CC; 
+    &:hover {
+        border: 1px solid $linkedin-hover;         
+    }
 }
 
 #github {
-    color: #fffdf9;
-    width: 55px; 
-    height: 55px;
-    line-height: 55px;  
+    color: $cream-white;
+    @include social-icons(35px);   
     vertical-align: text-bottom; 
-    margin-left: -15px;
+    margin-left: -25px;
     padding-left: 15px; 
-}
-
-#github:hover {
-    color: #60b044; 
+    &:hover {
+        color: $github-hover; 
+    }
 }
 
 #github-border {
-    width: 55px; 
-    height: 55px;
-    line-height: 55px; 
-    border-radius: 2px; 
-    border: 1px solid #fffdf9;
+    @include social-icons(35px);    
+    @include social-icons-border; 
     padding-right: 5px;  
+    &:hover {
+        border: 1px solid $github-hover; 
+    }
 }
 
-#github-border:hover {
-    border: 1px solid #60b044; 
-}
-
-// 
+/* CONTENT */ 
 
 #text {
     position: absolute; 
     z-index: 3;
     left: 15%;
-    top: 20%;
+    top: 17%;
     width: 70%; 
     height: 50%;  
 }
 
 #coming-soon {
-    font-family: 'Montserrat', sans-serif;
-    color: #fffdf9; 
+    font: {
+        family: 'Montserrat', sans-serif;
+        size: 1rem;  
+    }
+    color: $cream-white; 
     text-transform: uppercase; 
-    letter-spacing: 5px; 
-    text-shadow: 0.5px 0.5px 0.5px #3d4147;
+    letter-spacing: 4px; 
+    text-shadow: 0.5px 0.5px 0.5px $text-shadow;
     padding-top: -20px; 
-    min-height: 60px; 
+    min-height: 35px; 
 }
 
 #h1-font {
-    font-family: 'Montserrat', sans-serif;
-    color: #fffdf9; 
-    font-size: 25px;
-    // margin-top: -60px; 
-    text-shadow: 0.5px 0.5px 0.5px #3d4147;
+    color: $cream-white; 
+    font: {
+        family: 'Montserrat', sans-serif;
+        size: 1.45rem;  
+    }
+    text-shadow: 0.5px 0.5px 0.5px $text-shadow;
 }
 
 .form {
-    color: #fffdf9;
-    margin: auto; 
+    color: $cream-white;
+    // margin: auto; 
     margin: 50px auto; 
     max-width: 650px; 
 }
 
-.form-check-input {
-    margin-top: .5rem !important; 
+div h5 {
+    font-size: 1.2rem;
+    font-weight: 400; 
 }
+
 .options {
-    font-size: 1.2em;
     font-family: 'Montserrat', sans-serif;
-    color: #fffdf9; 
+    color: $cream-white; 
 }
 
 #input-width {
     width: 100%; 
-    margin: 25px auto; 
+    margin: 15px auto; 
     border-radius: 1px; 
 }
 
 #border-rounded {
     border-radius: .25rem; 
 }
+
+
+/*  CUSTOMIZED CHECKBOX */
+/* Customize the label (the container) */
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .check-container input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: $cream-white;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .check-container:hover input ~ .checkmark {
+    background-color: $check-container-hover;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .check-container input:checked ~ .checkmark {
+    background-color: $check-container-checked;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .check-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .check-container .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid $cream-white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

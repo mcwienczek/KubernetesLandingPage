@@ -1,7 +1,68 @@
 @media only screen and (min-width: 560px) {
 
+    #navbar {
+        height: 12%; 
+    }
+
+    #cwienczekCom {
+        font-size: 25px; 
+    }
+
+    @mixin social-icons($size) {
+        width: $size; 
+        height: $size;
+        line-height: $size; 
+    }
+    
+    #twitter {
+        @include social-icons(55px);
+        margin-left: -15px;     
+    }
+
+    #twitter-border {
+        @include social-icons(55px);       
+        margin-left: -15px; 
+    }
+
+    #linkedin {
+        @include social-icons(55px);
+        margin-left: -15px;   
+    }
+
+    #linkedin-border {
+        @include social-icons(55px);
+   
+    }    
+    
+    #github {
+        @include social-icons(55px);
+        margin-left: -15px; 
+    }
+
+    #github-border {
+        @include social-icons(55px);        
+    }
+
     #h1-font {
-        font-size: 45px; 
+        font-size: 2.8rem; 
+    }
+
+    #coming-soon {
+        font-size: 1.3rem; 
+        letter-spacing: 5px; 
+    }
+
+    div h5 {
+        font-size: 1.3rem;
+        font-weight: 350; 
+    }
+    
+    .check-container {
+        font-size: 1.2rem; 
+    }
+    
+    .checkmark {
+        top: 5px; 
     }
     
 }
