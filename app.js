@@ -1,5 +1,4 @@
 const express = require('express');
-// const serve = require('express-static');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 
@@ -8,7 +7,7 @@ const app = express();
 app.use(express.static('public'));
 
 function sendMail(formData) {
-    console.log(`login used to send email: ${process.env.USER}`);
+    //console.log(`login used to send email: ${process.env.USER}`);
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         host: process.env.HOST,

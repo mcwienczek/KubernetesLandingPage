@@ -36,12 +36,12 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 /* NAVBAR */
 #navbar {
-    z-index: 3; 
-    position: absolute;
+    z-index: 4; 
+    position: fixed;
     top: 0; 
     width: 100%; 
     height: 8%; 
-    background-color: $navbar !important; 
+    background-color: darken($navbar, 10%) !important; 
     }
 
 #cwienczekCom {
@@ -202,48 +202,48 @@ div h5 {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
   
-  /* Hide the browser's default checkbox */
-  .check-container input {
+/* Hide the browser's default checkbox */
+.check-container input {
     position: absolute;
     opacity: 0;
-  }
+}
   
-  /* Create a custom checkbox */
-  .checkmark {
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 2px;
     left: 0;
     height: 17px;
     width: 17px;
     background-color: $cream-white;
-  }
+}
   
-  /* On mouse-over, add a grey background color */
-  .check-container:hover input ~ .checkmark {
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
     background-color: $check-container-hover;
-  }
+}
   
-  /* When the checkbox is checked, add a blue background */
-  .check-container input:checked ~ .checkmark {
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
     background-color: $check-container-checked;
-  }
+}
   
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
   
-  /* Show the checkmark when checked */
-  .check-container input:checked ~ .checkmark:after {
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
     display: block;
-  }
+}
   
-  /* Style the checkmark/indicator */
-  .check-container .checkmark:after {
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
     left: 8px;
     top: 3px;
     width: 5px;
@@ -253,4 +253,38 @@ div h5 {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
+
+// FOOTER
+.footer {
+    z-index: 3; 
+    position: absolute;
+    top: 94%; 
+    width: 100%; 
+    max-height: 25%;   
+    color: $cream-white;  
+    background-color: lighten($footer, 20%); 
+}
+
+#info {
+    font-size: 9px; 
+    display: inline-block;
+    vertical-align: middle; 
+    text-align: center; 
+    padding-right: 10px; 
+    padding-left: 10px; 
+}
+
+#copyright {
+    font-size: 7px; 
+    text-align: center; 
+}
+
+hr {
+    width: 75%; 
+	border-top: 1px solid $cream-white !important;
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+    display: block; 
+    margin: 0 auto;
+    margin-top: 0 !important;   
+}
