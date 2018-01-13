@@ -1,10 +1,22 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
+const express   = require('express'),
+    nodemailer  = require('nodemailer'),
+    bodyParser  = require('body-parser'),
+    flash       = require('connect-flash'),
+    session     = require('express-session');
 
 const app = express();
 
 app.use(express.static('public'));
+/* Flash messages are stored in the session. 
+First, setup sessions by enabling session middleware. 
+Then, use flash middleware provided by connect-flash */
+app.use(session({
+    secret: 'tom and joep', 
+    cookie: {maxAge: 6000},
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(flash()); 
 
 function sendMail(formData) {
     //console.log(`login used to send email: ${process.env.USER}`);
@@ -44,6 +56,7 @@ function sendMail(formData) {
         if (error) {
             return console.log(error);
         }
+
         console.log('Message sent: %s', info.messageId);
         // Preview only available when sending through an Ethereal account
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
@@ -63,8 +76,13 @@ function sendMail(formData) {
 app.use(bodyParser.json());
 
 app.post('/registration', (req, res) => { 
+    
+    // Set a flash message by passing the key, followed by the value, to req.flash().
+    req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
     sendMail(req.body);
+    // Get an array of flash messages by passing the key to req.flash() 
+    res.send( { messages: req.flash('info') }); 
     res.sendStatus(200);
 });
 
