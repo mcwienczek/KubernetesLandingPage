@@ -10,7 +10,6 @@ EXPOSE 3000
 WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm install && npm cache clean --force
-ENV PATH /app/node_modules/.bin:$PATH
 
 # copy in our source code last, as it changes the most
 WORKDIR /app
