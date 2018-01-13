@@ -2,3 +2,5 @@
 npm-debug.log
 # Environment variables with sensitive data
 env.sh
+kubernetes-develop.yaml
+kubernetes-master.yaml
