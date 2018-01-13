@@ -104,8 +104,7 @@ html {
   width: 100% !important;
   height: 100%;
   margin: 0;
-  padding: 0;
-  /* background-image: url(./style/photo-1437419764061-2473afe69fc2.jpg);  */ }
+  padding: 0; }
 
 #layer {
   position: absolute;
@@ -124,140 +123,304 @@ html {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(99, 99, 99, 0.8));
   /* Standard syntax (must be last) */ }
 
+/* NAVBAR */
 #navbar {
-  z-index: 3;
-  position: absolute;
+  z-index: 4;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 10%;
-  background-color: rgba(40, 40, 40, 0.4) !important; }
+  height: 8%;
+  background-color: rgba(15, 15, 15, 0.5) !important; }
 
 #cwienczekCom {
   color: #fffdf9;
-  font-family: 'Montserrat', sans-serif; }
-
-#cwienczekCom:hover {
-  color: #6dd4ff; }
+  margin-left: -10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px; }
+  #cwienczekCom:hover {
+    color: #6dd4ff; }
 
 #twitter {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   color: #fffdf9;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
   vertical-align: text-bottom;
-  margin-left: -15px;
+  margin-left: -25px;
   padding-left: 15px; }
-
-#twitter:hover {
-  color: #13aff0; }
+  #twitter:hover {
+    color: #13aff0; }
 
 #twitter-border {
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   border-radius: 2px;
   border: 1px solid #fffdf9;
   margin-right: 5px;
   margin-left: -20px; }
-
-#twitter-border:hover {
-  border: 1px solid #13aff0; }
+  #twitter-border:hover {
+    border: 1px solid #13aff0; }
 
 #linkedin {
   color: #fffdf9;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   vertical-align: text-bottom;
-  margin-left: -15px;
+  margin-left: -25px;
   padding-left: 15px; }
-
-#linkedin:hover {
-  color: #3399CC; }
+  #linkedin:hover {
+    color: #3399CC; }
 
 #linkedin-border {
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   border-radius: 2px;
   border: 1px solid #fffdf9;
   margin-right: 5px; }
-
-#linkedin-border:hover {
-  border: 1px solid #3399CC; }
+  #linkedin-border:hover {
+    border: 1px solid #3399CC; }
 
 #github {
   color: #fffdf9;
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   vertical-align: text-bottom;
-  margin-left: -15px;
+  margin-left: -25px;
   padding-left: 15px; }
-
-#github:hover {
-  color: #60b044; }
+  #github:hover {
+    color: #60b044; }
 
 #github-border {
-  width: 55px;
-  height: 55px;
-  line-height: 55px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
   border-radius: 2px;
   border: 1px solid #fffdf9;
   padding-right: 5px; }
+  #github-border:hover {
+    border: 1px solid #60b044; }
 
-#github-border:hover {
-  border: 1px solid #60b044; }
-
+/* CONTENT */
 #text {
   position: absolute;
   z-index: 3;
   left: 15%;
-  top: 20%;
+  top: 17%;
   width: 70%;
   height: 50%; }
 
 #coming-soon {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
   color: #fffdf9;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-shadow: 0.5px 0.5px 0.5px #3d4147;
   padding-top: -20px;
-  min-height: 60px; }
+  min-height: 35px; }
 
 #h1-font {
-  font-family: 'Montserrat', sans-serif;
   color: #fffdf9;
-  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.45rem;
   text-shadow: 0.5px 0.5px 0.5px #3d4147; }
 
 .form {
   color: #fffdf9;
-  margin: auto;
   margin: 50px auto;
   max-width: 650px; }
 
-.form-check-input {
-  margin-top: .5rem !important; }
+div h5 {
+  font-size: 1.2rem;
+  font-weight: 400; }
 
 .options {
-  font-size: 1.2em;
   font-family: 'Montserrat', sans-serif;
   color: #fffdf9; }
 
 #input-width {
   width: 100%;
-  margin: 25px auto;
+  margin: 15px auto;
   border-radius: 1px; }
 
 #border-rounded {
   border-radius: .25rem; }
 
+/*  CUSTOMIZED CHECKBOX */
+/* Customize the label (the container) */
+.check-container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Hide the browser's default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  background-color: #fffdf9; }
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+  background-color: #ccc; }
+
+/* When the checkbox is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: #2196F3; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+  left: 8px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #fffdf9;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.footer {
+  z-index: 3;
+  position: absolute;
+  top: 94%;
+  width: 100%;
+  max-height: 25%;
+  color: #fffdf9;
+  background-color: #5b5b5b; }
+
+#info {
+  font-size: 9px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+#copyright {
+  font-size: 7px;
+  text-align: center; }
+
+hr {
+  width: 75%;
+  border-top: 1px solid #fffdf9 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0 !important; }
+
 @media only screen and (min-width: 560px) {
+  #navbar {
+    height: 12%; }
+  #cwienczekCom {
+    font-size: 25px; }
+  #twitter {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: -15px; }
+  #twitter-border {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: -15px; }
+  #linkedin {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: -15px; }
+  #linkedin-border {
+    width: 55px;
+    height: 55px;
+    line-height: 55px; }
+  #github {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin-left: -15px; }
+  #github-border {
+    width: 55px;
+    height: 55px;
+    line-height: 55px; }
   #h1-font {
-    font-size: 45px; } }
+    font-size: 2.8rem; }
+  #coming-soon {
+    font-size: 1.3rem;
+    letter-spacing: 5px; }
+  div h5 {
+    font-size: 1.3rem;
+    font-weight: 350; }
+  .check-container {
+    font-size: 1.2rem; }
+  .checkmark {
+    top: 5px; } }
 
 @media only screen and (min-width: 1140px) {
+  #twitter {
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    margin-left: -15px; }
+  #twitter-border {
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    margin-left: -15px; }
+  #linkedin {
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    margin-left: -15px; }
+  #linkedin-border {
+    width: 58px;
+    height: 58px;
+    line-height: 58px; }
+  #github {
+    width: 58px;
+    height: 58px;
+    line-height: 58px;
+    margin-left: -15px; }
+  #github-border {
+    width: 58px;
+    height: 58px;
+    line-height: 58px; }
   #h1-font {
-    font-size: 53px; } }
+    font-size: 3.8rem; }
+  #coming-soon {
+    font-size: 1.9rem;
+    letter-spacing: 6px; }
+  div h5 {
+    font-size: 1.7rem;
+    font-weight: 350; }
+  .check-container {
+    font-size: 1.5rem; }
+  .checkmark {
+    top: 9px; } }

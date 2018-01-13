@@ -43,18 +43,20 @@
             <div>
                 <h5>I'm interested in: </h5>
             </div>
-            <div class="row options">
-                <div class="col">
+            <div class=" options">
+                <div class="">
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="">
+                        <label class="check-container">
                             Half-day online workshop conducted during the weekend
+                            <input id="workshop" type="checkbox" >
+                            <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" value="">
+                        <label class="check-container">
                             On demand online videos that I can watch at my own pace
+                            <input id="video" type="checkbox">
+                            <span class="checkmark"></span>
                         </label>
                     </div>
                 </div>
@@ -62,17 +64,25 @@
             <div>
                 <div class="input-group" id="input-width">
                     <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
-                    <input id="email" type="text" class="form-control" placeholder="Enter your e-mail address" aria-label="Email" aria-describedby="basic-addon1">
+                    <input id="email" type="text" class="form-control" placeholder="Enter your e-mail address" required aria-label="Email" aria-describedby="basic-addon1">
                 </div>
                 <div>
                     <button class="btn btn-primary btn-block" id="border-rounded">
-                    Let me know when it statrts
+                    Let me know when it starts
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    
+    <div class="footer">
+        <p id="info">There is no need to be worried that I will span your inbox. 
+            You only sign for a newsletter that will let you know when the Kubernetes online course or workshop is ready.
+            You can also chose whether to buy the course you have signed up to or not.
+            Last but not least, I won't give or sell your email address to anyone.  
+        </p>
+        <hr /> 
+        <p id="copyright">Copyright Agnieszka Bugla 2018</p>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="./index.js"></script>
