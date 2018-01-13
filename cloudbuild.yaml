@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/cwienczek-cluster/github-mcwienczek-kuberneteslandingpage:$COMMIT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["push", "gcr.io/cwienczek-cluster/github-mcwienczek-kuberneteslandingpage:$COMMIT_SHA"]
+images: ['gcr.io/cwienczek-cluster/github-mcwienczek-kuberneteslandingpage']
