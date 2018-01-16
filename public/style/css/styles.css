@@ -331,7 +331,7 @@ div h5 {
 
 hr {
   width: 75%;
-  border-top: 1px solid #fffdf9 !important;
+  border-top: 1px solid #757575 !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
   display: block;
   margin: 0 auto;
@@ -423,4 +423,6 @@ hr {
   .check-container {
     font-size: 1.5rem; }
   .checkmark {
-    top: 9px; } }
+    top: 9px; }
+  #info {
+    font-size: 10px; } }

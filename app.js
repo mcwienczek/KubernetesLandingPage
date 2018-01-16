@@ -10,13 +10,13 @@ app.use(express.static('public'));
 /* Flash messages are stored in the session. 
 First, setup sessions by enabling session middleware. 
 Then, use flash middleware provided by connect-flash */
-app.use(session({
-    secret: 'tom and joep', 
-    cookie: {maxAge: 6000},
-    resave: false,
-    saveUninitialized: false
-}));
-app.use(flash()); 
+// app.use(session({
+//     secret: 'tom and joep', 
+//     cookie: {maxAge: 6000},
+//     resave: false,
+//     saveUninitialized: false
+// }));
+//app.use(flash()); 
 
 function sendMail(formData) {
     //console.log(`login used to send email: ${process.env.USER}`);
@@ -26,8 +26,8 @@ function sendMail(formData) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: process.env.USER, // generated ethereal user
-            pass: process.env.PASSWORD  // generated ethereal password
+            user: process.env.USER,// generated ethereal user
+            pass: process.env.PASSWORD// generated ethereal password
         }
     });
 
@@ -40,7 +40,7 @@ function sendMail(formData) {
               ${formData.email} \n
               This subscriber has chosen:  \n
               WORKSHOP: ${formData.workshop} \n
-              VIDEO: ${formData.video}`, // plain text body
+              VIDEO: ${formData.video}`// plain text body
     };
 
     // setup email data to the nw userwith unicode symbols
@@ -78,11 +78,11 @@ app.use(bodyParser.json());
 app.post('/registration', (req, res) => { 
     
     // Set a flash message by passing the key, followed by the value, to req.flash().
-    req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
+    //req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
     sendMail(req.body);
     // Get an array of flash messages by passing the key to req.flash() 
-    res.send( { messages: req.flash('info') }); 
+    //res.send( { messages: req.flash('info') }); 
     res.sendStatus(200);
 });
 

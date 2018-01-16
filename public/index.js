@@ -19,6 +19,8 @@ $(document).ready(function(){
             dataType: "json",
             success: function(data) {
                 console.log(data);
+                console.log("SUCCESS"); 
+                alert("You have successfully subscribed to the Kubernetes Courses newsletter"); 
             },
             failure: function(errMsg) {
                 console.log(errMsg);

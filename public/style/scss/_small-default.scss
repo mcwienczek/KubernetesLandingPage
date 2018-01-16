@@ -282,7 +282,7 @@ div h5 {
 
 hr {
     width: 75%; 
-	border-top: 1px solid $cream-white !important;
+	border-top: 1px solid lighten($footer, 30%) !important;
     border-bottom: 1px solid rgba(0,0,0,0.2) !important;
     display: block; 
     margin: 0 auto;
