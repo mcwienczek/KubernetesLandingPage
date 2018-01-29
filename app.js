@@ -2,6 +2,7 @@ const express   = require('express'),
     nodemailer  = require('nodemailer'),
     bodyParser  = require('body-parser'),
     flash       = require('connect-flash'),
+    fs          = require('fs'), 
     session     = require('express-session');
 
 const app = express();
@@ -17,6 +18,17 @@ Then, use flash middleware provided by connect-flash */
 //     saveUninitialized: false
 // }));
 //app.use(flash()); 
+
+//function saving a newly signed email to the file emails.csv
+function saveEmail(dataToWrite) {
+    fs.appendFile('emails.csv', `${dataToWrite.email}, `, (err) => {
+    if (err) {
+      console.log('Some error occured - file either not saved or corrupted file saved.');
+    } else {
+      console.log('The new email has been successfully appended to emails.csv!');
+    }
+  });
+}
 
 function sendMail(formData) {
     //console.log(`login used to send email: ${process.env.USER}`);
@@ -81,6 +93,7 @@ app.post('/registration', (req, res) => {
     //req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
     sendMail(req.body);
+    saveEmail(req.body); 
     // Get an array of flash messages by passing the key to req.flash() 
     //res.send( { messages: req.flash('info') }); 
     res.sendStatus(200);
