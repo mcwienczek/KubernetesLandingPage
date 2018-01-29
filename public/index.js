@@ -16,15 +16,16 @@ $(document).ready(function(){
             // The key needs to match your method's input parameter (case-sensitive).
             data: JSON.stringify(dataToSend),
             contentType: "application/json",
-            dataType: "json",
-            success: function(data) {
-                console.log(data);
-                console.log("SUCCESS"); 
-                alert("You have successfully subscribed to the Kubernetes Courses newsletter"); 
-            },
-            failure: function(errMsg) {
-                console.log(errMsg);
-            }
+            dataType: "json"
+        })
+        .done(function() {
+            alert( "success" );
+        })
+        .fail(function(data) {
+            console.log(data);
+        })
+        .always(function() {
+            console.log("completed");
         });
     });
 }); 

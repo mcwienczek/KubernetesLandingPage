@@ -95,8 +95,9 @@ app.post('/registration', (req, res) => {
     sendMail(req.body);
     saveEmail(req.body); 
     // Get an array of flash messages by passing the key to req.flash() 
-    //res.send( { messages: req.flash('info') }); 
-    res.sendStatus(200);
+    
+    res.send({ success: "true" }); 
+    
 });
 
 app.listen(3000, function () {
