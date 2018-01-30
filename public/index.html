@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
     <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    
 
 </head>
@@ -86,18 +87,28 @@
         <h4>Check your e-mail</h4>
     </div>
 
+    <!-- ALERT BUTTON -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+
+
     <!-- FOOTER -->
     <div class="footer">
         <p id="info">You don't need to be worried that I will span your inbox. 
             You only sign for a newsletter that will let you know when the Kubernetes online course or workshop is ready.
-            You can also chose later whether to buy the course you have signed up to or not.
-            Last but not least, I won't give or sell your email address to anyone.  
+            You can also choose later whether to buy the course you have signed up to or not.
+            Last but not least, I won't sell or give your email address to anyone.  
         </p>
         <hr /> 
         <p id="copyright">Copyright Agnieszka Bugla 2018</p>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <script type="text/javascript" src="./index.js"></script>
 </body>
 </html>

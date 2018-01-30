@@ -1,23 +1,11 @@
 const express   = require('express'),
     nodemailer  = require('nodemailer'),
     bodyParser  = require('body-parser'),
-    flash       = require('connect-flash'),
-    fs          = require('fs'), 
-    session     = require('express-session');
-
+    fs          = require('fs');
+    
 const app = express();
 
 app.use(express.static('public'));
-/* Flash messages are stored in the session. 
-First, setup sessions by enabling session middleware. 
-Then, use flash middleware provided by connect-flash */
-// app.use(session({
-//     secret: 'tom and joep', 
-//     cookie: {maxAge: 6000},
-//     resave: false,
-//     saveUninitialized: false
-// }));
-//app.use(flash()); 
 
 //function saving a newly signed email to the file emails.csv
 function saveEmail(dataToWrite) {
@@ -88,14 +76,9 @@ function sendMail(formData) {
 app.use(bodyParser.json());
 
 app.post('/registration', (req, res) => { 
-    
-    // Set a flash message by passing the key, followed by the value, to req.flash().
-    //req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
     sendMail(req.body);
-    saveEmail(req.body); 
-    // Get an array of flash messages by passing the key to req.flash() 
-    
+    saveEmail(req.body);     
     res.send({ success: "true" }); 
     
 });
