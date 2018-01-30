@@ -19,7 +19,8 @@ $(document).ready(function(){
             dataType: "json"
         })
         .done(function() {
-            alert( "success" );
+            $(".thanks").css("display", "block"); 
+            $("button").css("display", "none"); 
         })
         .fail(function(data) {
             console.log(data);

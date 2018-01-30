@@ -255,6 +255,27 @@ div h5 {
     transform: rotate(45deg);
 }
 
+//THANK YOU NOTE
+.thanks {
+    position: fixed;
+    top: 10%;
+    width: 80%;
+    right: 10%;
+    height: 80%; 
+    z-index: 5;
+    display: none; 
+    background-color: $footer;
+    h2, h3, h4 {
+        color: $cwienczek-hover; 
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+    h2 {
+        padding-top: 10%; 
+    }
+}
+
+
 // FOOTER
 .footer {
     z-index: 3; 

@@ -308,6 +308,22 @@ div h5 {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
+.thanks {
+  position: fixed;
+  top: 10%;
+  width: 80%;
+  right: 10%;
+  height: 80%;
+  z-index: 5;
+  display: none;
+  background-color: #282828; }
+  .thanks h2, .thanks h3, .thanks h4 {
+    color: #6dd4ff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center; }
+  .thanks h2 {
+    padding-top: 10%; }
+
 .footer {
   z-index: 3;
   position: absolute;
@@ -381,7 +397,11 @@ hr {
   .check-container {
     font-size: 1.2rem; }
   .checkmark {
-    top: 5px; } }
+    top: 5px; }
+  .thanks h2 {
+    font-size: 3.7rem; }
+  .thanks h4 {
+    font-size: 2.7rem; } }
 
 @media only screen and (min-width: 1140px) {
   #twitter {

@@ -21,7 +21,7 @@ Then, use flash middleware provided by connect-flash */
 
 //function saving a newly signed email to the file emails.csv
 function saveEmail(dataToWrite) {
-    fs.appendFile('emails.csv', `${dataToWrite.email}, `, (err) => {
+    fs.appendFile('emails.csv', `${dataToWrite.email},${dataToWrite.workshop},${dataToWrite.video}\n`, (err) => {
     if (err) {
       console.log('Some error occured - file either not saved or corrupted file saved.');
     } else {
