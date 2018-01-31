@@ -2,3 +2,4 @@
 npm-debug.log
 # Environment variables with sensitive data
 env.sh
+emails.csv
