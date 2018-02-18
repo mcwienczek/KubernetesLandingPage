@@ -28,13 +28,11 @@ app.post('/registration', (req, res) => {
     console.log(req.body);
 
     var new_subscriber = {
-        "email_address": req.email,
+        "email_address": req.body.email,
         "status": "subscribed",
             "merge_fields": {
-            "FNAME": "Urist",
-            "LNAME": "McVankab",
-            "WORKSHOP": req.workshop,
-            "COURSE": req.course
+            "WORKSHOP": req.body.workshop,
+            "COURSE": req.body.course
         }
     };
     
