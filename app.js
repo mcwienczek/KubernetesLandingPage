@@ -13,17 +13,16 @@ app.post('/registration', (req, res) => {
     
     var new_subscriber = {
         "email_address": req.body.email,
-        "status": "subscribed",
-            "merge_fields": {
+        "status": "pending",
+        "merge_fields": {
             "WORKSHOP": req.body.workshop.toString(),
             "COURSE": req.body.course.toString()
         }
     };
 
-    console.log(new_subscriber);
-    var url = `https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`;
+    console.log(`New user wants to subscribe ${req.body.email}`);
 
-    console.log(url)
+    var url = `https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`;
 
     //send registration to mailchimp
     axios.post(url, new_subscriber)
