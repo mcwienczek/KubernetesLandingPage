@@ -47,7 +47,6 @@ app.post('/registration', (req, res) => {
 
     // Get an array of flash messages by passing the key to req.flash() 
     res.send( { messages: req.flash('info') }); 
-    res.sendStatus(200);
 });
 
 app.listen(3000, function () {
