@@ -26,7 +26,7 @@ app.post('/registration', (req, res) => {
 
     var new_subscriber = {
         "email_address": req.body.email,
-        "status": "subscribed",
+        "status": "pending",
             "merge_fields": {
             "WORKSHOP": req.body.workshop.toString(),
             "COURSE": req.body.course.toString()
