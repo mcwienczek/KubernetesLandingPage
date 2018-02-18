@@ -2,7 +2,6 @@ const express   = require('express'),
     nodemailer  = require('nodemailer'),
     bodyParser  = require('body-parser'),
     axios       = require('axios');
-    fs          = require('fs');
 
     const app = express();
 
