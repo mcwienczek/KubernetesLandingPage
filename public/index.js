@@ -27,7 +27,7 @@ $(document).ready(function(){
                 .fail(function(data) {
                     $.confirm({
                         title: 'Encountered an error!',
-                        content: 'Something went downhill, this may be serious',
+                        content: 'Something went downhill, please try again in a few seconds',
                         type: 'red',
                         typeAnimated: true,
                         buttons: {
