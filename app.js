@@ -37,8 +37,7 @@ app.post('/registration', (req, res) => {
     };
     
     //send registration to mailchimp
-    console.log(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`);
-    axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber)
+    axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, JSON.stringify(new_subscriber))
     .then(function(success) {
         console.log(`Subscribed email ${req.body.email}`);
         res.send( { messages: req.flash('info') }); 
