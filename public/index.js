@@ -20,11 +20,13 @@ $(document).ready(function(){
                     contentType: "application/json",
                     dataType: "json"
                 })
-                .done(function() {
+                .done(function(response) {
+                    console.log(response);
                     $(".thanks").css("display", "block"); 
                     $("button").css("display", "none");
                 })
                 .fail(function(data) {
+                    console.log(data);
                     $.confirm({
                         title: 'Encountered an error!',
                         content: 'Something went downhill, please try again in a few seconds',
