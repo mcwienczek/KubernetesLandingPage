@@ -2,7 +2,8 @@ const express   = require('express'),
     nodemailer  = require('nodemailer'),
     bodyParser  = require('body-parser'),
     flash       = require('connect-flash'),
-    session     = require('express-session');
+    session     = require('express-session'),
+    axios       = require('axios');
 
 const app = express();
 
@@ -18,61 +19,6 @@ app.use(session({
 }));
 app.use(flash()); 
 
-function sendMail(formData) {
-    //console.log(`login used to send email: ${process.env.USER}`);
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: process.env.HOST,
-        port: 465,
-        secure: true, // true for 465, false for other ports
-        auth: {
-            user: process.env.USER, // generated ethereal user
-            pass: process.env.PASSWORD  // generated ethereal password
-        }
-    });
-
-    // setup email data with unicode symbols
-    let mailOptions = {
-        from: process.env.FROMEMAIL, // sender address
-        to: process.env.MAINEMAIL, // list of receivers
-        subject: 'A new user registered for Kubernetes courses newsletter', // Subject line
-        text: `You have got one new subscriber with e-mail address: \n
-              ${formData.email} \n
-              This subscriber has chosen:  \n
-              WORKSHOP: ${formData.workshop} \n
-              VIDEO: ${formData.video}`, // plain text body
-    };
-
-    // setup email data to the nw userwith unicode symbols
-    let mailOptions2 = {
-        from: process.env.FROMEMAIL, // sender address
-        to: formData.email, // list of receivers
-        subject: 'Welcome to the Kubernetes Courses Newsletter', // Subject line
-        text: 'Thank you for subscribing for the Kubernetes Courses Newsletter :)  ', 
-        };
-
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-
-        console.log('Message sent: %s', info.messageId);
-        // Preview only available when sending through an Ethereal account
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@blurdybloop.com>
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    });
-    transporter.sendMail(mailOptions2, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: %s', info.messageId);
-        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-    });
-}
-
 app.use(bodyParser.json());
 
 app.post('/registration', (req, res) => { 
@@ -80,7 +26,21 @@ app.post('/registration', (req, res) => {
     // Set a flash message by passing the key, followed by the value, to req.flash().
     req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
-    sendMail(req.body);
+
+    var new_subscriber = {
+        "email_address": req.email,
+        "status": "subscribed",
+            "merge_fields": {
+            "FNAME": "Urist",
+            "LNAME": "McVankab",
+            "WORKSHOP": req.workshop,
+            "COURSE": req.course
+        }
+    };
+    
+    //send registration to mailchimp
+    axios.post(`https://${env.USER}:${env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/9e67587f52/members/`, new_subscriber);
+
     // Get an array of flash messages by passing the key to req.flash() 
     res.send( { messages: req.flash('info') }); 
     res.sendStatus(200);

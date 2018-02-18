@@ -12,6 +12,7 @@
   "author": "Agnieszka Bugla",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "express": "^4.16.2",

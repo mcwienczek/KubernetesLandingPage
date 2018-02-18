@@ -5,3 +5,4 @@ env.sh
 kubernetes-develop.yaml
 kubernetes-master.yaml
 cloudbuild.yaml
+docker_build_and_push.sh

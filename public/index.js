@@ -3,12 +3,12 @@ $(document).ready(function(){
     $("button").click(function() {
         var email = $("#email").val();
         var workshop = $("#workshop").is(':checked');
-        var video = $("#video").is(':checked');
+        var course = $("#course").is(':checked');
 
         var dataToSend = {
             email: email,
             workshop: workshop,
-            video: video
+            course: course
         };
         $.ajax({
             type: "POST",
