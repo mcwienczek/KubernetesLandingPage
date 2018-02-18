@@ -4,3 +4,4 @@ npm-debug.log
 env.sh
 kubernetes-develop.yaml
 kubernetes-master.yaml
+cloudbuild.yaml
