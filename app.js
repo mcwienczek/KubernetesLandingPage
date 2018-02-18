@@ -28,8 +28,9 @@ app.post('/registration', (req, res) => {
         console.log(`Subscribed email ${req.body.email}`);
         res.sendStatus(200);
     },
-    function(failure){
+    function(failure, data){
         console.log(`Failed registering user: ${failure}`);
+        console.log(`Additional data: ${JSON.stringify(data, null, 2)}`);
         res.sendStatus(500);
     });
 });
