@@ -1,30 +1,27 @@
 const express   = require('express'),
     nodemailer  = require('nodemailer'),
     bodyParser  = require('body-parser'),
-    flash       = require('connect-flash'),
-    session     = require('express-session'),
     axios       = require('axios');
+    fs          = require('fs');
 
-const app = express();
+    const app = express();
 
 app.use(express.static('public'));
-/* Flash messages are stored in the session. 
-First, setup sessions by enabling session middleware. 
-Then, use flash middleware provided by connect-flash */
-app.use(session({
-    secret: 'tom and joep', 
-    cookie: {maxAge: 6000},
-    resave: false,
-    saveUninitialized: false
-}));
-app.use(flash()); 
+
+//function saving a newly signed email to the file emails.csv
+function saveEmail(dataToWrite) {
+    fs.appendFile('emails.csv', `${dataToWrite.email},${dataToWrite.workshop},${dataToWrite.video}\n`, (err) => {
+    if (err) {
+      console.log('Some error occured - file either not saved or corrupted file saved.');
+    } else {
+      console.log('The new email has been successfully appended to emails.csv!');
+    }
+  });
+}
 
 app.use(bodyParser.json());
 
 app.post('/registration', (req, res) => { 
-    
-    // Set a flash message by passing the key, followed by the value, to req.flash().
-    req.flash('info', 'You have successfully subscribed to the Kubernetes Courses newsletter');
     console.log(req.body);
 
     var new_subscriber = {
@@ -35,7 +32,7 @@ app.post('/registration', (req, res) => {
             "COURSE": req.body.course.toString()
         }
     };
-    
+
     //send registration to mailchimp
     axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber)
     .then(function(success) {
@@ -48,6 +45,9 @@ app.post('/registration', (req, res) => {
     });
 
     // Get an array of flash messages by passing the key to req.flash() 
+    saveEmail(req.body);
+    res.send({ success: "true" }); 
+    
 });
 
 app.listen(3000, function () {
