@@ -37,16 +37,13 @@ app.post('/registration', (req, res) => {
     axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber)
     .then(function(success) {
         console.log(`Subscribed email ${req.body.email}`);
+        saveEmail(req.body);
         res.sendStatus(200);
     },
     function(failure){
         console.log(`Failed registering user: ${failure}`);
         res.sendStatus(500);
     });
-
-    saveEmail(req.body);
-    res.send({ success: "true" }); 
-    
 });
 
 app.listen(3000, function () {
