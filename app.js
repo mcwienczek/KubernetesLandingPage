@@ -21,16 +21,18 @@ app.post('/registration', (req, res) => {
     };
 
     console.log(new_subscriber);
+    var url = `https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`;
+
+    console.log(url)
 
     //send registration to mailchimp
-    axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber)
+    axios.post(url, new_subscriber)
     .then(function(success) {
         console.log(`Subscribed email ${req.body.email}`);
         res.sendStatus(200);
     },
-    function(failure, data){
+    function(failure){
         console.log(`Failed registering user: ${failure}`);
-        console.log(`Additional data: ${JSON.stringify(data, null, 2)}`);
         res.sendStatus(500);
     });
 });
