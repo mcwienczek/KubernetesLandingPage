@@ -37,7 +37,13 @@ app.post('/registration', (req, res) => {
     };
     
     //send registration to mailchimp
-    axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber);
+    axios.post(`https://${process.env.USER}:${process.env.PASSWORD}@us17.api.mailchimp.com/3.0/lists/${process.env.LIST_ID}/members/`, new_subscriber)
+    .then(function(success) {
+        console.log(`Subscribed email ${req.body.email}`);
+    },
+    function(failure){
+        console.log(`Failed registering user: ${failure}`);
+    });
 
     // Get an array of flash messages by passing the key to req.flash() 
     res.send( { messages: req.flash('info') }); 
