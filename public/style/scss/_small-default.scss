@@ -161,6 +161,15 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     text-shadow: 0.5px 0.5px 0.5px $text-shadow;
 }
 
+#h2-font {
+    color: $cream-white; 
+    font: {
+        family: 'Montserrat', sans-serif;
+        size: 1.2rem;
+    }
+    text-shadow: 0.5px 0.5px 0.5px $text-shadow;
+}
+
 .form {
     color: $cream-white;
     // margin: auto; 

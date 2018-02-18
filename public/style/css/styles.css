@@ -229,6 +229,12 @@ html {
   font-size: 1.45rem;
   text-shadow: 0.5px 0.5px 0.5px #3d4147; }
 
+#h2-font {
+  color: #fffdf9;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  text-shadow: 0.5px 0.5px 0.5px #3d4147; }
+
 .form {
   color: #fffdf9;
   margin: 50px auto;
