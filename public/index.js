@@ -12,21 +12,11 @@ $(document).ready(function(){
                     workshop: workshop,
                     course: course
                 };
-                $.ajax({
-                    type: "POST",
-                    url: "/registration",
-                    // The key needs to match your method's input parameter (case-sensitive).
-                    data: JSON.stringify(dataToSend),
-                    contentType: "application/json",
-                    dataType: "json"
-                })
-                .done(function(response) {
-                    console.log(response);
+                axios.post(`/registration`, dataToSend)
+                .then(function(success) {
                     $(".thanks").css("display", "block"); 
                     $("button").css("display", "none");
-                })
-                .fail(function(data) {
-                    console.log(data);
+                }, function(failure) {
                     $.confirm({
                         title: 'Encountered an error!',
                         content: 'Something went downhill, please try again in a few seconds',
@@ -43,9 +33,6 @@ $(document).ready(function(){
                             }
                         }
                     });
-                })
-                .always(function() {
-                    console.log("completed");
                 });
             } else {
                 $.alert({
