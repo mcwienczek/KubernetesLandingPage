@@ -16,7 +16,6 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-static": "^1.2.5",
-    "md5": "^2.2.1",
     "nodemailer": "^4.4.1"
   },
   "devDependencies": {
